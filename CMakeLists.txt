@@ -38,12 +38,18 @@ add_executable(4gewinnt_client
         src/game/game.h
         src/core/sounds.cpp
         src/core/sounds.h
-        src/core/terminal/loadingscreen.cpp
-        src/core/terminal/loadingscreen.h
+        src/core/terminal/loading_screen.cpp
+        src/core/terminal/loading_screen.h
         src/core/terminal/menu_screen.cpp
         src/core/terminal/menu_screen.h
         src/menu/menu.cpp
         src/menu/menu.h
+        src/core/terminal/settings_screen.cpp
+        src/core/terminal/settings_screen.h
+        src/core/terminal/play_screen.cpp
+        src/core/terminal/play_screen.h
+        src/core/terminal/shop_screen.cpp
+        src/core/terminal/shop_screen.h
 )
 
 target_link_libraries(4gewinnt_client

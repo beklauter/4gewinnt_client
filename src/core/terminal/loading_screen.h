@@ -19,7 +19,7 @@
 
 using namespace ftxui;
 
-class loadingscreen {
+class loading_screen {
 private:
     ScreenInteractive screen;
     float progress = 0.0f;
@@ -28,7 +28,7 @@ private:
     Component makeUI();
 
 public:
-    loadingscreen();
+    loading_screen();
     void loop();
     void addLog(const std::string& msg);
 };

@@ -40,6 +40,7 @@ Component menu_screen::makeUI() {
             sounds::playsound("../assets/", "button_click.wav");
         }),
         Button("❌ SCHLIESSEN", [&] {
+            /* exit func here */
             sounds::playsound("../assets/", "shutdown.wav");
             screen.ExitLoopClosure()();
         })

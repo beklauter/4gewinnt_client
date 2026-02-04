@@ -3,11 +3,11 @@
 //
 
 
-#include "loadingscreen.h"
+#include "loading_screen.h"
 
-loadingscreen::loadingscreen() : screen(ScreenInteractive::Fullscreen()) {}
+loading_screen::loading_screen() : screen(ScreenInteractive::Fullscreen()) {}
 
-Component loadingscreen::makeUI() {
+Component loading_screen::makeUI() {
     return Renderer([&] {
         progress += 0.025f;
         if (progress >= 1.0f) {
@@ -16,7 +16,6 @@ Component loadingscreen::makeUI() {
                 Sleep(1000);
                 screen.Exit();
             }
-            return vbox({ text("Loading Fertig!") | center });
         }
 
         return vbox({
@@ -32,6 +31,6 @@ Component loadingscreen::makeUI() {
     });
 }
 
-void loadingscreen::loop() {
+void loading_screen::loop() {
     screen.Loop(makeUI());
 }

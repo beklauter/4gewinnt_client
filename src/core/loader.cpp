@@ -25,7 +25,7 @@ void loader::loadMenu() {
         // sounds::playsound("../assets/", "happy.wav");
         // std::cin.ignore();
 
-        loadingscreen loader;
+        loading_screen loader;
         loader.loop();
 
         menu_screen menu;

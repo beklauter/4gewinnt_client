@@ -10,7 +10,7 @@
 #include <Windows.h>
 #include "print.h"
 #include "sounds.h"
-#include "terminal/loadingscreen.h"
+#include "terminal/loading_screen.h"
 
 class loader {
 public:
