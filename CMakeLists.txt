@@ -30,6 +30,10 @@ add_executable(4gewinnt_client
         src/menu/menu_screen.h
         src/lobby/lobbylogic.cpp
         src/lobby/lobbylogic.h
+        src/menu/shop.cpp
+        src/menu/shop.h
+        src/core/playerdata.cpp
+        src/core/playerdata.h
 )
 
 target_link_libraries(4gewinnt_client
