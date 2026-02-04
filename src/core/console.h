@@ -5,8 +5,15 @@
 #ifndef INC_4GEWINNT_CLIENT_CONSOLE_H
 #define INC_4GEWINNT_CLIENT_CONSOLE_H
 
+#include <Windows.h>
+#include <iostream>
 
 class console {
+
+public:
+    static void setupConsole();
+
+private:
 };
 
 

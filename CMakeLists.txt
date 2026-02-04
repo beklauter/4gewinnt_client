@@ -12,14 +12,24 @@ FetchContent_MakeAvailable(ftxui)
 
 add_executable(4gewinnt_client
         src/main.cpp
-        src/game.cpp
-        src/game.h
-        src/host.cpp
-        src/host.h
-        src/client.cpp
-        src/client.h
-        src/console.cpp
-        src/console.h
+        src/network/host.cpp
+        src/network/host.h
+        src/network/client.cpp
+        src/network/client.h
+        src/core/console.cpp
+        src/core/console.h
+        src/core/print.cpp
+        src/core/print.h
+        src/core/states.cpp
+        src/core/states.h
+        src/game/board.cpp
+        src/game/board.h
+        src/game/gamelogic.cpp
+        src/game/gamelogic.h
+        src/menu/menu_screen.cpp
+        src/menu/menu_screen.h
+        src/lobby/lobbylogic.cpp
+        src/lobby/lobbylogic.h
 )
 
 target_link_libraries(4gewinnt_client
