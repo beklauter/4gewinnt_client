@@ -27,10 +27,22 @@ Component menu_screen::makeUI() {
     Component esc_renderer = Renderer([] { return text("ESC zum Beenden") | dim; });
 
     Component buttons = Container::Vertical({
-        Button("▶ SPIELEN", [&] { /* play func here */ }),
-        Button("🛒 SHOP", [&] { /* shop func here */ }),
-        Button("⚙ EINSTELLUNGEN", [&] { /* settings func here */ }),
-        Button("❌ SCHLIESSEN", screen.ExitLoopClosure())
+        Button("▶ SPIELEN", [&] {
+            /* play func here */
+            sounds::playsound("../assets/", "button_click.wav");
+        }),
+        Button("🛒 SHOP", [&] {
+            /* shop func here */
+            sounds::playsound("../assets/", "button_click.wav");
+        }),
+        Button("⚙ EINSTELLUNGEN", [&] {
+            /* settings func here */
+            sounds::playsound("../assets/", "button_click.wav");
+        }),
+        Button("❌ SCHLIESSEN", [&] {
+            sounds::playsound("../assets/", "button_click.wav");
+            screen.ExitLoopClosure()();
+        })
     });
 
     auto ui = Container::Vertical({
@@ -60,5 +72,6 @@ Component menu_screen::makeUI() {
 }
 
 void menu_screen::loop() {
+    sounds::playsound("../assets/", "startup.wav");
     screen.Loop(makeUI());
 }

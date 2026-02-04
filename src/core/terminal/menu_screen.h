@@ -12,6 +12,7 @@
 #include "ftxui/component/screen_interactive.hpp"
 #include <conio.h>
 #include <iostream>
+#include "../sounds.h"
 
 class menu_screen;
 
