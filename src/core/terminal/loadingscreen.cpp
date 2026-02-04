@@ -13,7 +13,7 @@ Component loadingscreen::makeUI() {
         if (progress >= 1.0f) {
             if (!done) {
                 done = true;
-                Sleep(200);
+                Sleep(1000);
                 screen.Exit();
             }
             return vbox({ text("Loading Fertig!") | center });

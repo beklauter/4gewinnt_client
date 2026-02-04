@@ -40,7 +40,7 @@ Component menu_screen::makeUI() {
             sounds::playsound("../assets/", "button_click.wav");
         }),
         Button("❌ SCHLIESSEN", [&] {
-            sounds::playsound("../assets/", "button_click.wav");
+            sounds::playsound("../assets/", "shutdown.wav");
             screen.ExitLoopClosure()();
         })
     });
@@ -54,6 +54,7 @@ Component menu_screen::makeUI() {
 
     ui = ui | CatchEvent([&](Event event) {
         if (event == Event::Escape) {
+            sounds::playsound("../assets/", "shutdown.wav");
             screen.ExitLoopClosure()();
             return true;
         }
