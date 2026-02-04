@@ -5,7 +5,8 @@
 #include "print.h"
 
 void print::printWelcomeMessage() {
-    std::cout << R"(    d8888        .d8888b.                         d8b                   888
+    std::cout << R"(
+    d8888        .d8888b.                         d8b                   888
    d8P888       d88P  Y88b                        Y8P                   888
   d8P 888       888    888                                              888
  d8P  888       888         .d88b.  888  888  888 888 88888b.  88888b.  888888

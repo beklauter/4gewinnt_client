@@ -18,11 +18,18 @@ void loader::loadMenu() {
     bool terminal = console::setupConsole();
 
     if (terminal) {
-        Sleep(1000);
         std::cout << "Console Setup Complete. Current State: " << states::getState() << std::endl;
+        Sleep(1000);
         system("cls");
-        print::printWelcomeMessage();
-        std::cin.ignore();
+        // print::printWelcomeMessage();
+        // sounds::playsound("../assets/", "happy.wav");
+        // std::cin.ignore();
+
+        loadingscreen loader;
+        loader.loop();
+
+        menu_screen menu;
+        menu.loop();
     } else {
         std::cout << "Console Setup Failed." << std::endl;
     }

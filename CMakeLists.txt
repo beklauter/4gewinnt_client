@@ -26,8 +26,6 @@ add_executable(4gewinnt_client
         src/game/board.h
         src/game/gamelogic.cpp
         src/game/gamelogic.h
-        src/menu/menu_screen.cpp
-        src/menu/menu_screen.h
         src/lobby/lobbylogic.cpp
         src/lobby/lobbylogic.h
         src/menu/shop.cpp
@@ -38,6 +36,14 @@ add_executable(4gewinnt_client
         src/core/loader.h
         src/game/game.cpp
         src/game/game.h
+        src/core/sounds.cpp
+        src/core/sounds.h
+        src/core/terminal/loadingscreen.cpp
+        src/core/terminal/loadingscreen.h
+        src/core/terminal/menu_screen.cpp
+        src/core/terminal/menu_screen.h
+        src/menu/menu.cpp
+        src/menu/menu.h
 )
 
 target_link_libraries(4gewinnt_client
@@ -47,3 +53,5 @@ target_link_libraries(4gewinnt_client
         ftxui::dom
         ftxui::screen
 )
+
+target_compile_definitions(4gewinnt_client PRIVATE NOMINMAX)

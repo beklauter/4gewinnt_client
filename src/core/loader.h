@@ -9,6 +9,8 @@
 #include "states.h"
 #include <Windows.h>
 #include "print.h"
+#include "sounds.h"
+#include "terminal/loadingscreen.h"
 
 class loader {
 public:
