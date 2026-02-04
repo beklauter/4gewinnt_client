@@ -34,6 +34,10 @@ add_executable(4gewinnt_client
         src/menu/shop.h
         src/core/playerdata.cpp
         src/core/playerdata.h
+        src/core/loader.cpp
+        src/core/loader.h
+        src/game/game.cpp
+        src/game/game.h
 )
 
 target_link_libraries(4gewinnt_client

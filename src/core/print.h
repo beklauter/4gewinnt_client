@@ -5,8 +5,13 @@
 #ifndef INC_4GEWINNT_CLIENT_PRINT_H
 #define INC_4GEWINNT_CLIENT_PRINT_H
 
+#include <iostream>
 
 class print {
+public:
+    static void printWelcomeMessage();
+private:
+
 };
 
 

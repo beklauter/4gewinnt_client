@@ -11,7 +11,7 @@
 class console {
 
 public:
-    static void setupConsole();
+    static bool setupConsole();
 
 private:
 };

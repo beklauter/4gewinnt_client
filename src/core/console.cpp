@@ -4,7 +4,8 @@
 
 #include "console.h"
 
-void console::setupConsole() {
+bool console::setupConsole() {
     SetConsoleOutputCP(CP_UTF8);
     std::cout << "Console Preparation Complete" << std::endl;
+    return true;
 }

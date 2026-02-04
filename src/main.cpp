@@ -1,7 +1,7 @@
-#include "core/console.h"
+#include "core/loader.h"
+
 
 int main() {
-    console::setupConsole();
-
+    loader::loadMenu();
     return 0;
 }
