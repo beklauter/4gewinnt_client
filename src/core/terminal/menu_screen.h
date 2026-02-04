@@ -10,6 +10,8 @@
 #include <ftxui/component/component.hpp>
 #include "../states.h"
 #include "ftxui/component/screen_interactive.hpp"
+#include <conio.h>
+#include <iostream>
 
 class menu_screen;
 
