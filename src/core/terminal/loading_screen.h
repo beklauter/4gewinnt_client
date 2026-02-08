@@ -7,6 +7,8 @@
 
 
 #pragma once
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/screen_interactive.hpp>
 #include <ftxui/dom/elements.hpp>
@@ -14,7 +16,6 @@
 #include "../../game/game.h"
 #include <thread>
 #include <chrono>
-#include "windows.h"
 #include "menu_screen.h"
 
 using namespace ftxui;

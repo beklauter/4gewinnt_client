@@ -21,16 +21,11 @@ void loader::loadMenu() {
         std::cout << "Console Setup Complete. Current State: " << states::getState() << std::endl;
         Sleep(1000);
         system("cls");
-        // print::printWelcomeMessage();
-        // sounds::playsound("../assets/", "happy.wav");
-        // std::cin.ignore();
 
-        loading_screen loader;
+        loading_screen loader; // meddl loide
         loader.loop();
 
         menu_screen menu;
         menu.loop();
-    } else {
-        std::cout << "Console Setup Failed." << std::endl;
     }
 }

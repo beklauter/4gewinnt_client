@@ -7,6 +7,12 @@
 
 
 class shop_screen {
+public:
+    int coins = 0;
+
+private:
+    void addCoins(int amount);
+    void removeCoins(int amount);
 };
 
 

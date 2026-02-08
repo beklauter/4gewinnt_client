@@ -1,13 +1,18 @@
-//
-// Created by beklauter on 04.02.2026.
-//
-
 #include "menu_screen.h"
+#include "play_screen.h"
 
 menu_screen* g_menu_screen = nullptr;
 
-menu_screen::menu_screen() : screen(ScreenInteractive::Fullscreen()) {
+menu_screen::menu_screen() {
     g_menu_screen = this;
+    screen = new ftxui::ScreenInteractive(ScreenInteractive::Fullscreen());
+}
+
+menu_screen::~menu_screen() {
+    if (screen) {
+        delete screen;
+        screen = nullptr;
+    }
 }
 
 Component menu_screen::makeUI() {
@@ -28,21 +33,19 @@ Component menu_screen::makeUI() {
 
     Component buttons = Container::Vertical({
         Button("▶ SPIELEN", [&] {
-            /* play func here */
             sounds::playsound("../assets/", "button_click.wav");
+            screen->Exit();
         }),
         Button("🛒 SHOP", [&] {
-            /* shop func here */
             sounds::playsound("../assets/", "button_click.wav");
         }),
         Button("⚙ EINSTELLUNGEN", [&] {
-            /* settings func here */
             sounds::playsound("../assets/", "button_click.wav");
         }),
         Button("❌ SCHLIESSEN", [&] {
-            /* exit func here */
             sounds::playsound("../assets/", "shutdown.wav");
-            screen.ExitLoopClosure()();
+            shouldExit = true;
+            screen->Exit();
         })
     });
 
@@ -56,24 +59,33 @@ Component menu_screen::makeUI() {
     ui = ui | CatchEvent([&](Event event) {
         if (event == Event::Escape) {
             sounds::playsound("../assets/", "shutdown.wav");
-            screen.ExitLoopClosure()();
+            shouldExit = true;
+            screen->Exit();
             return true;
         }
         return false;
     });
     return ui;
-    /*
-    return Container::Vertical({
-        title_renderer,
-        buttons,
-        sep_renderer,
-        esc_renderer
-    }) | center | flex;
-
-    */
 }
 
 void menu_screen::loop() {
     sounds::playsound("../assets/", "startup.wav");
-    screen.Loop(makeUI());
+
+    while (!shouldExit) {
+        if (!screen) {
+            screen = new ftxui::ScreenInteractive(ScreenInteractive::Fullscreen());
+        }
+
+        backToMenu = false;
+        screen->Loop(makeUI());
+
+        if (shouldExit) {
+            break;
+        }
+
+        if (!backToMenu) {
+            play_screen playScreen;
+            playScreen.loop();
+        }
+    }
 }

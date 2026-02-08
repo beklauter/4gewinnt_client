@@ -50,6 +50,8 @@ add_executable(4gewinnt_client
         src/core/terminal/play_screen.h
         src/core/terminal/shop_screen.cpp
         src/core/terminal/shop_screen.h
+        src/core/terminal/game_screen.cpp
+        src/core/terminal/game_screen.h
 )
 
 target_link_libraries(4gewinnt_client
