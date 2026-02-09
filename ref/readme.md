@@ -24,3 +24,8 @@ Sounds:
 
 idea:
 - frontend & backend ordner machen um console output klar von backend operationen zu unterscheiden
+
+
+QOF:
+- If game is Over then only the leader can decide if the game is repeated or not and if repeat then both players should get into a new game
+- some moves are buggy more infos will be following 
