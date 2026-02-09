@@ -28,4 +28,6 @@ idea:
 
 QOF:
 - If game is Over then only the leader can decide if the game is repeated or not and if repeat then both players should get into a new game
-- some moves are buggy more infos will be following 
+- some moves are buggy more infos will be following
+- if player leaves the game just continues for the player who didnt leave
+- on the retry screen is only the enter to retry option not the escape to main menu
