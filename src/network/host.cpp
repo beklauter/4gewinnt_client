@@ -49,7 +49,7 @@ bool host::startServer(const std::string& name) {
         return false;
     }
 
-    // Erlaube Socket-Wiederverwendung um TIME_WAIT zu vermeiden
+    // socket reuse to avoid "Address already in use" error on quick restarts
     int reuseAddr = 1;
     if (setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR, (const char*)&reuseAddr, sizeof(reuseAddr)) == SOCKET_ERROR) {
         std::cerr << "setsockopt failed: " << WSAGetLastError() << std::endl;
@@ -108,7 +108,6 @@ void host::stopServer() {
     if (acceptThread.joinable()) acceptThread.join();
     if (receiveThread.joinable()) receiveThread.join();
 
-    // Gib dem System Zeit um die Ports freizugeben
     Sleep(500);
 }
 
@@ -228,7 +227,7 @@ void host::receiveMessages() {
 void host::broadcastMessage(const NetworkMessage& msg) {
     std::lock_guard<std::mutex> lock(clientsMutex);
 
-    // Serialisiere die Message (einfaches Format: type|playerId|column|playerColor|data)
+    // Serielize (Format: type|playerId|column|playerColor|data)
     std::string serialized = std::to_string(static_cast<int>(msg.type)) + "|" +
                             std::to_string(msg.playerId) + "|" +
                             std::to_string(msg.column) + "|" +
