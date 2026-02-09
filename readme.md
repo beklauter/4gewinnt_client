@@ -5,7 +5,7 @@ Benutzt FTXUI für die UI-Darstellung und WinMM für Sound.
 
 ## Voraussetzungen
 - Windows 10 / 11
-- CLion oder CMake + Visual Studio Build Tools (MSVC)
+- CLion oder CMake + Visual Studio Build Tools 2026 (MSVC)
 - CMake (>= 3.XX)
 - Git
 
@@ -16,7 +16,7 @@ git clone https://github.com/beklauter/4gewinnt_client.git
 cd 4gewinnt_client
 ```
 
-2. Build-Ordner anlegen und konfigurieren (Beispiel Visual Studio 2022):
+2. Build-Ordner anlegen und konfigurieren (Beispiel Visual Studio 2022 (OUTDATED use 2026 instead)):
 ```
 cmake -S . -B cmake-build-release-visual-studio -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release
 ```
